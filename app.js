@@ -1,17 +1,17 @@
 const express =  require("express");
 const https = require("https");
 const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
-const app = express();
 
-const port = 3000;
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+const port = 3003;
 app.get("/",function(req,res){
-    res.sendFile(`${__dirname} /index.html`);
+    res.sendFile(`${__dirname}/index.html`);
 })
 app.post('/', (req, res)=>{
   const country = req.body.country;
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=bab0a8027a793beab894021a9a7469eb`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=7235208499c620026a82dde5f8945a89`
 
   https.get(url, (response)=>{
     console.log(response.statusCode)
