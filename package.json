@@ -1,0 +1,14 @@
+{
+  "name": "weather_icon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "My_data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chita Chiamaka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
