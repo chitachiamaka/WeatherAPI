@@ -11,7 +11,7 @@ app.get("/",function(req,res){
 app.post('/', (req, res)=>{
   const country = req.body.country;
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=7235208499c620026a82dde5f8945a89`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=0d8b724b92995f0fc8775050e70724c6`
 
   https.get(url, (response)=>{
     console.log(response.statusCode)
@@ -21,12 +21,12 @@ app.post('/', (req, res)=>{
        const desc = weatherData.weather[0].description
        const ic = weatherData.weather[0].icon
        const icons = `https://openweathermap.org/img/wn/${ic}@4x.png` 
-    // console.log(weatherData)
-       res.write(`<p>The Weather in ${country} is: ${desc}</p>`);
-       res.write(`<h1>The Temperature in ${country} is: ${temp} degree celcius</h1>`);
-       res.write(`<img src=${icons} alt="weather icon">`);
-       res.write(`<button onclick="history.back()">go back</button>`);
-       res.send()
+          res.send(`
+       <p>The Weather in ${country} is: ${desc}</p>
+       <h1>The Temperature in ${country} is: ${temp} degree celcius</h1>
+       <img src=${icons} alt="weather icon">
+       <button onclick="history.back()"> move back</button>
+       `)
 
     })
 });
